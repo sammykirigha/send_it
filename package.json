@@ -1,0 +1,28 @@
+{
+  "name": "send_it",
+  "version": "1.0.0",
+  "description": "a parcel delivery application",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sammykirigha/send_it.git"
+  },
+  "keywords": [
+    "parcel"
+  ],
+  "author": "sammy kirigha and jonathan ndambuki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sammykirigha/send_it/issues"
+  },
+  "homepage": "https://github.com/sammykirigha/send_it#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.15"
+  }
+}
