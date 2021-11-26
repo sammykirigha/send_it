@@ -23,7 +23,7 @@ module.exports = {
     options: {
       trustedConnection: true,
       encrypt: sqlEncrypt,
-      trustedServerCertificate: true,
+      trustServerCertificate: true,
       enableArithAbort: true,
     },
   },
