@@ -1,0 +1,8 @@
+CREATE OR ALTER PROCEDURE getParcel
+AS
+BEGIN
+SELECT * FROM  parcels
+END
+
+
+

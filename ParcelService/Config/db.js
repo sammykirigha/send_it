@@ -1,10 +1,11 @@
+require('dotenv').config();
 const mssql=require('mssql')
+
 let config = {
     server: process.env.DB_HOST,
     user: process.env.DB_USER,
     database:process.env.DB_NAME,
-    password:process.env.DB_PASSWORD
-   ,
+    password:process.env.DB_PASSWORD,
   
     options: {
    
@@ -16,18 +17,23 @@ let config = {
         min: 0,
         idleTimeoutMillis: 30000
     }
-    }
+}
 
-mssql.connect(config).then(pool =>{
+// console.log(config);
 
-    if(pool.connecting){
-        console.log('connecting to the database')
-    }
+// mssql.connect(config).then(pool =>{
 
-    if(pool.connected){
-        console.log("connected")
-    }
-}).catch(e=>console.log(e))
+//     if(pool.connecting){
+//         console.log('connecting to the database')
+//     }
+
+//     if(pool.connected){
+//         console.log("connected")
+//     }
+// }).catch(e=> {
+//     // console.log(process.env);
+//     // console.log(e)
+// })
 
 
 
