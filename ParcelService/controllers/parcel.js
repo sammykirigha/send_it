@@ -42,6 +42,26 @@ class ParcelController {
     }
     res.status(201).send("You successfully created a parcel");
   };
+
+
+  getParcel = async (req, res, next) => {
+    const results = await db.exec("getParcel")
+  if (!results){
+     throw new HttpException(500, "Something went wrong");
+  }
+  res.status(201).send(results.recordsets[0]);
+}
+
+  getParcelById = async (req, res, next) => {
+        const id  = req.params.id;
+        const parcel = await (await db.exec('getParcelById', {id} )).recordsets[0][0]
+       // console.log(parcel)
+        if (!parcel) {
+            res.status(404).send({Message: 'parcel not found'})
+        }        
+        return res.status(201).send(parcel)
+    }
+
 }
 
 module.exports = new ParcelController;

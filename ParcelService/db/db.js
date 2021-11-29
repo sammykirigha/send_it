@@ -1,7 +1,5 @@
 const mssql = require("mssql");
 const config = require("../config");
-
-console.log(config.sql);
 class Connection {
   constructor() {
     this.connectionDb();
@@ -30,7 +28,6 @@ class Connection {
   exec = async (procName, data = {}) => {
     let request = this.pool.request();
     request = this.createRequest(request, data);
-
     const results = await request.execute(procName);
     return results;
   };
