@@ -62,6 +62,35 @@ class ParcelController {
         return res.status(201).send(parcel)
     }
 
+  updateParcel = async(req, res, next) => {
+    const {
+      description,
+      sender_number,
+      receiver_number,
+      start_location,
+      end_location,
+      status,
+      isCancelled,
+      isDelivered,
+    } = req.body
+
+    const results = await (await db.exec('uspUpdateParcel', {
+      description,
+      sender_number,
+      receiver_number,
+      start_location,
+      end_location,
+      status,
+      isCancelled,
+      isDelivered,
+    }))
+
+    if(result === 0) {
+     res.status(404).send({message: "parcel not found"})
+    }
+    res.send("Parcel updated succefully")
+  }
+
 }
 
 module.exports = new ParcelController;
