@@ -1,5 +1,5 @@
 const mssql = require("mssql");
-const config = require("../config");
+const config = require("../Config/config");
 class Connection {
   constructor() {
     this.connectionDb();
