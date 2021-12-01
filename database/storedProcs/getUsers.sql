@@ -3,6 +3,3 @@ AS
 BEGIN
 SELECT * FROM  parcels
 END
-
-
-

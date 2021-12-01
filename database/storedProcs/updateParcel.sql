@@ -1,4 +1,4 @@
-CREATE OR ALTER [dbo].[uspUpdateParcel]
+CREATE OR ALTER PROCEDURE [dbo].[uspUpdateParcel]
   @id VARCHAR(100),
   @description VARCHAR(250),
   @sender_number INT,
@@ -7,19 +7,19 @@ CREATE OR ALTER [dbo].[uspUpdateParcel]
   @end_location INT,
   @status VARCHAR(50),
   @isCancelled INT,
-  @isDelivered INT,
+  @isDelivered INT
 
 AS 
 BEGIN
      UPDATE dbo.parcels SET
-        description = @description,
+        [description] = @description,
         sender_number = @sender_number,
         receiver_number = @receiver_number,
         start_location = @start_location,
-        @end_location = @end_location,
-        status = @status,
+        end_location = @end_location,
+        [status] = @status,
         isCancelled = @isCancelled,
         isDelivered = @isDelivered
      WHERE id = @id
      SELECT @@ROWCOUNT
-END     
+END  

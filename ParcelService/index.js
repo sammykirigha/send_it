@@ -2,7 +2,7 @@ const express = require("express");
 const helmet = require("helmet");
 require('dotenv').config()
 const morgan = require("morgan");
-const config = require("./config");
+const config = require("./Config/config");
 const cors = require("cors");
 const parcelRouter = require("./routes/parcel");
 
