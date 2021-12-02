@@ -3,6 +3,7 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 const config = require("./Config/config");
 const cors = require("cors");
+const userRouter = require('./routes/users')
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.use(express.json());
 app.options("*", cors());
 app.use(express.urlencoded({ extended: true }));
 
+app.use('api/v1', userRouter)
 
 
 const PORT = config.port

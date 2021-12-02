@@ -10,4 +10,4 @@ class EncryptedData {
     }
 }
 
-export default EncryptedData;
+module.exports = EncryptedData;

@@ -2,7 +2,7 @@ const db = require('../db/db')
 const Joi = require('joi')
 const {v4: uuidv4} = require("uuid")
 const { validateUser } = require('../helpers/userValidate')
-const { default: EncryptedData } = require('../helpers/encrypt')
+const EncryptedData  = require('../helpers/encrypt')
 const passport = require('passport')
 
 module.exports = {
