@@ -26,7 +26,7 @@ module.exports = {
        const password = EncryptedData.generateHash(req.body.password)
 
        const {username, full_name, email, tel_number, isAdmin} = req.body
-
+       console.log(username, full_name);
        const id = uuidv4()
        const admin = isAdmin ? 1 : 0
 

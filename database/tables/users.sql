@@ -17,4 +17,5 @@ CREATE TABLE [dbo].users
 )
 GO
 
+insert into users(id, username, full_name, tel_number, email, password) VALUES(1, 'sammy', 'sammy kirigha', 0989808098, 'sam@gmail.com', 'password')
 select * from users;
