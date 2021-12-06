@@ -25,8 +25,7 @@ module.exports = {
 
        const password = EncryptedData.generateHash(req.body.password)
 
-       const {username, full_name, email, tel_number, isAdmin} = req.body
-       console.log(username, full_name);
+       const {username, full_name, tel_number, email, isAdmin} = req.body
        const id = uuidv4()
        const admin = isAdmin ? 1 : 0
 
@@ -40,6 +39,7 @@ module.exports = {
                password,
                isAdmin: admin
            })
+           res.status(201).send({message: "Account created successfully"})
        } catch (error) {
            console.log(error);
            res.status(500).send({message: 'Internal Server Error'})

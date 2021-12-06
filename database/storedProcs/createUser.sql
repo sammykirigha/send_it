@@ -1,4 +1,5 @@
-CREATE OR ALTER PROCEDURE [dbo].[uspCreateUser] 
+CREATE OR ALTER PROCEDURE [dbo].[uspCreateUser]
+    @id VARCHAR(100),
     @username VARCHAR(100),
     @full_name VARCHAR(100),
     @tel_number INT,
@@ -10,6 +11,7 @@ BEGIN
      SET NOCOUNT ON
      INSERT INTO dbo.users
      (
+         id,
          username,
          full_name,
          tel_number,
@@ -19,6 +21,7 @@ BEGIN
      )
      VALUES
      (
+        @id,
         @username,
         @full_name,
         @tel_number,
