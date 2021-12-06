@@ -3,7 +3,8 @@ const Joi = require('joi')
 const {v4: uuidv4} = require("uuid")
 const { validateUser } = require('../helpers/userValidate')
 const EncryptedData  = require('../helpers/encrypt')
-const passport = require('passport')
+const _ = require("lodash")
+const createdToken  = require('../helpers/jwtHelpers')
 
 module.exports = {
     loginUser: async (req, res) => {
@@ -11,6 +12,44 @@ module.exports = {
             email: Joi.string().email().required(),
             password: Joi.string().min(6).required()
         })
+       const {error} = schema.validate(req.body)
+
+        if (error) return res.status(400).send({ success: false, message: error.details[0].message })
+        
+        const { email, password } = req.body;
+
+        const { recordset } = await db.exec('getUserByEmail', { email });
+
+        const user = recordset[0]
+
+        if (!user) return res.status(404).send({ message: "Account does not exist" })
+
+        try {
+            const isPasswordValid = await EncryptedData.compareHash(password, user.password)
+
+            if(!isPasswordValid) return res.status(404).send("Invalid email or password try again!")
+        
+        const token = createdToken(user.email, user.id, user.isAdmin);
+        res.send({
+            user: _.pick(user, [
+                "id",
+                "username",
+                "full_name",
+                "email",
+                "tel_number",
+                "isDelivered",
+                "isSent",
+                "isAdmin",
+                "isUpdated",
+                "isDeparture"
+             ]), token
+        })
+        } catch (error) {
+            console.log(error);
+            res.send({message: "Failed to login"})
+        }
+
+        
     },
 
     regiterUser: async (req, res) => {

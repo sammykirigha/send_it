@@ -9,8 +9,12 @@ BEGIN
           u.full_name,
           u.tel_number,
           u.email,
+          u.password,
           u.isAdmin,
-          u.password
+          u.isSent,
+          u.isDelivered,
+          u.isDeparture,
+          u.isUpdated
      FROM [users] u
      WHERE email = @email AND isDeleted = 0
 END

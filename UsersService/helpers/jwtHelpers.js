@@ -1,7 +1,16 @@
+const config = require('../Config/config');
 const jwt = require('jsonwebtoken')
 
-const createdToken = (payload, secretKey, expiresIn) => {
-    jwt.sign(payload, secretKey, expiresIn)
+module.exports = (id, email, isAdmin) => {
+   return jwt.sign({
+        id, email, isAdmin
+    },config.secretkey, {expiresIn: "24h"} )
 }
 
-export default createdToken;
+// const jwt = require('jsonwebtoken')
+
+// module.exports = (email, id, isAdmin) => {
+//     return jwt.sign({
+//         email, id, isAdmin
+//     }, process.env.SECRET_JWT, {expiresIn: "24h"})
+// }

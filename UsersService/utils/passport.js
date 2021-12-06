@@ -1,3 +1,5 @@
+import createdToken from '../helpers/jwtHelpers'
+
 const passport = require('passport')
 const db = require('../db/db')
 const CustomError = require('./customError')
@@ -18,14 +20,15 @@ passport.use(
                 const user = recordset[0]
 
                 if(!user) throw new CustomError(400, 'Invalid credentials')
-                const passwordMatch = await EncryptedData.generateHash(
+                const passwordMatch = await EncryptedData.compareHash(
                     password,
                     user.password
                 )
                 if(!passwordMatch) {
                     throw new CustomError(400, 'Invalid credentials')
                 }
-                return done(null, user)
+                const token = createdToken(user.id, user.email, user.isAdmin)
+                return done(null, {user, token})
             } catch (error) {
                 return done(error)
             }
