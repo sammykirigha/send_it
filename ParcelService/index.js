@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 // routes
-app.use("/parcel", parcelRouter);
+app.use('/api/v1/parcels', parcelRouter);
 
 const PORT = process.env.PORT || 4000
 app.listen(PORT, () => {

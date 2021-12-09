@@ -1,6 +1,8 @@
 CREATE DATABASE SENDIT;
 GO
 drop table parcels;
+
+
 CREATE TABLE [dbo].parcels
 (
     id VARCHAR(100) PRIMARY KEY NOT NULL,
