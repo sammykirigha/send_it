@@ -1,7 +1,5 @@
-CREATE DATABASE SENDIT;
-GO
-drop table parcels;
-
+CREATE DATABASE SENDIT
+DROP TABLE parcels
 
 CREATE TABLE [dbo].parcels
 (
@@ -12,8 +10,11 @@ CREATE TABLE [dbo].parcels
     start_location VARCHAR(100) NOT NULL,
     end_location VARCHAR(100) NOT NULL,
     [status] VARCHAR(50) NOT NULL,
-    isCancelled INT DEFAULT(0),
-    isDelivered INT DEFAULT(0)
+    isDeleted INT DEFAULT(0),
+    isUpdated INT DEFAULT(0),
+    isSent INT DEFAULT(0),
+    isDelivered INT DEFAULT(0),
+    sender_id VARCHAR(100) FOREIGN KEY REFERENCES [dbo].users(id) ON DELETE CASCADE ON UPDATE CASCADE,
 );
 GO
 

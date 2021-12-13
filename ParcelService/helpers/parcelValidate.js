@@ -8,8 +8,9 @@ exports.validateParcel = (parcel) => {
     start_location: Joi.string().required(),
     end_location: Joi.string().required(),
     status: Joi.string().required(),
-    isCancelled: Joi.number().required(),
+    isUpdated: Joi.number().required(),
     isDelivered: Joi.number().required(),
+    sender_id: Joi.string().required()
   });
   return schema.validate(parcel);
 };

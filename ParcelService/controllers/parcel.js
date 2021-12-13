@@ -2,8 +2,10 @@ const db = require("../db/db");
 const HttpException = require("../utils/httpException");
 const { v4: uuidv4 } = require("uuid");
 const { validateParcel } = require("../helpers/parcelValidate");
+
+
 module.exports = {
-  createProject: async (req, res, next) => {
+  createParcel: async (req, res, next) => {
       const { error } = validateParcel(req.body);
 
       if (error)
@@ -18,8 +20,9 @@ module.exports = {
         start_location,
         end_location,
         status,
-        isCancelled,
+        isUpdated,
         isDelivered,
+        sender_id
       } = req.body;
       const id = uuidv4()
 
@@ -32,8 +35,9 @@ module.exports = {
           start_location,
           end_location,
           status,
-          isCancelled,
+          isUpdated,
           isDelivered,
+          sender_id
         })
         res.status(201).send("You successfully created a parcel");
       } catch (error) {
@@ -45,7 +49,7 @@ module.exports = {
 
 
   getParcel: async (req, res, next) => {
-          const results = await db.exec("getParcel")
+        const results = await db.exec("getParcel")
         if (!results){
           throw new HttpException(500, "Something went wrong");
         }

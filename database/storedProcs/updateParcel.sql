@@ -1,13 +1,15 @@
 CREATE OR ALTER PROCEDURE [dbo].[uspUpdateParcel]
+  (
   @id VARCHAR(100),
   @description VARCHAR(250),
   @sender_number INT,
   @receiver_number INT,
-  @start_location INT,
-  @end_location INT,
+  @start_location VARCHAR(100),
+  @end_location VARCHAR(100),
   @status VARCHAR(50),
   @isCancelled INT,
   @isDelivered INT
+  )
 
 AS 
 BEGIN

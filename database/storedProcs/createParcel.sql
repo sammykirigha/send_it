@@ -6,13 +6,14 @@ CREATE OR ALTER PROCEDURE [dbo].[uspCreateParcel]
     @start_location VARCHAR(100),
     @end_location VARCHAR(100),
     @status VARCHAR(100),
-    @isCancelled INT,
-    @isDelivered INT
+    @isUpdated INT,
+    @isDelivered INT,
+    @sender_id VARCHAR(100)
 
 AS
 BEGIN
     SET NOCOUNT ON
-    INSERT INTO [dbo].projects
+    INSERT INTO [dbo].parcels
         (
         id,
         [description],
@@ -21,8 +22,9 @@ BEGIN
         start_location,
         end_location,
         [status],
-        isCancelled,
-        isDelivered
+        isUpdated,
+        isDelivered,
+        sender_id
         )
     VALUES
         (
@@ -33,8 +35,9 @@ BEGIN
             @start_location,
             @end_location,
             @status,
-            @isCancelled,
-            @isDelivered
+            @isUpdated,
+            @isDelivered,
+            @sender_id
      )
 
 END
