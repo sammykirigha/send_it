@@ -78,6 +78,7 @@ module.exports = {
                password,
                isAdmin: admin
            })
+           await (await db).query("INSERT INTO dbo.user_registration_queue (user_id, isSent) VALUES('" + id +"', 0)")
            res.status(201).send({message: "Account created successfully"})
        } catch (error) {
            console.log(error);
