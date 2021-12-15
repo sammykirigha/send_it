@@ -1,12 +1,14 @@
 CREATE DATABASE SENDIT
 DROP TABLE parcels
 
+
 CREATE TABLE [dbo].parcels
 (
     id VARCHAR(100) PRIMARY KEY NOT NULL,
     [description] VARCHAR(250) NOT NULL,
-    sender_number INT NOT NULL,
-    receiver_number INT NOT NULL,
+    sender_number VARCHAR(100) NOT NULL,
+    receiver_number VARCHAR(100) NOT NULL,
+	receiver_email VARCHAR(200) NOT NULL,
     start_location VARCHAR(100) NOT NULL,
     end_location VARCHAR(100) NOT NULL,
     [status] VARCHAR(50) NOT NULL,
@@ -17,6 +19,7 @@ CREATE TABLE [dbo].parcels
     sender_id VARCHAR(100) FOREIGN KEY REFERENCES [dbo].users(id) ON DELETE CASCADE ON UPDATE CASCADE,
 );
 GO
+
 
 SELECT *
 FROM parcels
