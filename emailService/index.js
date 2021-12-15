@@ -6,7 +6,8 @@ const cors = require("cors");
 const cron = require('node-cron')
 const regTaskRunner = require('./tasks/emails/Registration')
 const departureTaskRunner= require('./tasks/emails/Departure')
-
+const arrivalTaskRunner= require('./tasks/emails/Arrival')
+const arrivalSMSTaskRunner= require('./tasks/SMS/ParcelArrival')
 
 const app = express();
 
@@ -31,7 +32,9 @@ const run = async() => {
 const run1 = async()=>{
   cron.schedule('*/10 * * * * *', async() => {
     console.log("running")
-    await departureTaskRunner();
+    // await departureTaskRunner();
+    // await arrivalTaskRunner();
+    await arrivalSMSTaskRunner();
  
   });
 }

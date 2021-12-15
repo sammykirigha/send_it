@@ -1,0 +1,5 @@
+CREATE OR ALTER PROCEDURE getParcelArrival
+AS
+BEGIN
+SELECT * FROM  parcels WHERE isDelivered=0
+END

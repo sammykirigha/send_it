@@ -8,16 +8,16 @@ const {sendMail} = require('../helpers/email')
 
 module.exports = async () => {
     try {
-        const items = await (await db.exec("getParcel")).recordsets[0]
+        const items = await (await db.exec("getParcelArrival")).recordsets[0]
        
-
+        //console.log(items)
 
         for(let item of items){
             // console.log(item.receiver_email)
 
     
-            ejs.renderFile('templates/departure.ejs', 
-            {parcelid: item.id, startlocation: item.start_location, endlocation: item.end_location}, 
+            ejs.renderFile('templates/arrival.ejs', 
+            {parcelid: item.id , endlocation: item.end_location}, 
             async(error, data) => {
                 if(error) return
     
@@ -27,14 +27,13 @@ module.exports = async () => {
                         address: process.env.EMAIL_USER
                     },
                     to: item.receiver_email,
-                    subject: "Parcel Departure",
+                    subject: "Parcel Arrival",
                     html: data
                 }
     
                 try {
                     await sendMail(message)
-                    const pid= item.id
-                    await db.query("UPDATE parcels SET isSent= 1 WHERE id= '" + item.id +"'")
+                    await db.query("UPDATE parcels SET isDelivered=1 WHERE id= '" + item.id +"'")
                     console.log(`Registration Email sent to ${item.receiver_email}`)
                 } catch (error) {
                     console.log(error);
