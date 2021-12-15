@@ -1,5 +1,5 @@
 CREATE OR ALTER PROCEDURE getParcel
 AS
 BEGIN
-SELECT * FROM  parcels
+SELECT * FROM  parcels WHERE status='sent'
 END

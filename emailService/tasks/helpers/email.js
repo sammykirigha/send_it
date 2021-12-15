@@ -8,7 +8,8 @@ dotenv.config()
  }
 
  const defaultConfig = {
-     servive: process.env.SERVICE,
+     service: process.env.SERVICE,
+    // host:process.env.HOST,
      auth: {
          user: process.env.EMAIL_USER,
          pass: process.env.EMAIL_PASS
