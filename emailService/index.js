@@ -9,6 +9,7 @@ const departureTaskRunner= require('./tasks/emails/Departure')
 const arrivalTaskRunner= require('./tasks/emails/Arrival')
 const arrivalSMSTaskRunner= require('./tasks/SMS/ParcelArrival')
 
+
 const app = express();
 
 app.use(cors());
