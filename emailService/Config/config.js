@@ -1,7 +1,10 @@
 const dotenv = require("dotenv");
 dotenv.config();
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 const { PORT, HOST, HOST_URL, SERVICE, EMAIL_USER, EMAIL_PASS, DB_USER, DB_SERVER,  DB_PASS, DB_DATABASE } =
   process.env;
 
