@@ -34,6 +34,7 @@ class Connection {
 
   query = async (query, options) => {
     const results = await this.pool.request().query(query);
+    // return results
   };
 }
 

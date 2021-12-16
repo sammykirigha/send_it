@@ -1,6 +1,8 @@
 const nodemailer = require('nodemailer');
+const config = require('../../Config/config')
 const dotenv = require("dotenv")
 dotenv.config()
+
 
  function createTransport(congif){
      let transporter = nodemailer.createTransport(congif)
@@ -8,11 +10,10 @@ dotenv.config()
  }
 
  const defaultConfig = {
-     service: process.env.SERVICE,
-    // host:process.env.HOST,
+     service: config.service,
      auth: {
-         user: process.env.EMAIL_USER,
-         pass: process.env.EMAIL_PASS
+         user:config.username,
+         pass: config.userpass
      }
  }
 

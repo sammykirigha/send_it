@@ -6,5 +6,4 @@ create table [dbo].user_registration_queue
     isSent int DEFAULT(0)
 )
 
-select *
-from [dbo].user_registration_queue
+SELECT * FROM dbo.user_registration_queue where isSent = 0 

@@ -14,7 +14,7 @@ app.use(express.json());
 app.options("*", cors());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/api/v1', userRouter)
+app.use('/api/v1/users', userRouter)
 
 
 const PORT = config.port
