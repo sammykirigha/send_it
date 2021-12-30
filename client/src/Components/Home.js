@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import {Link} from  'react-router-dom'
 export default class Home extends Component {
     render() {
         return (
@@ -14,9 +14,9 @@ export default class Home extends Component {
          <p style={{color:'black'}}> SEND<span style={{color:'red'}}>IT</span></p> 
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a className="navbar-brand  py-2  ml-5 mr-5" style={{ marginLeft: '200px', fontSize:'30px' ,fontFamily:'Monotype Corsiva'}}>Welcome To SendIT </a>
-            <a className="navbar-brand  py-2 mr-5" style={{ marginLeft: '450px' }}> Login </a>
-            <a className="navbar-brand  py-2 mr-5" style={{ marginLeft: '20px' }}> Signup </a>
+            <Link to ='home' className="navbar-brand  py-2  ml-5 mr-5" style={{ marginLeft: '200px', fontSize:'30px' ,fontFamily:'Monotype Corsiva'}}>Welcome To SendIT </Link>
+            <Link to ='login' className="navbar-brand  py-2 mr-5" style={{ marginLeft: '450px' }}> Login </Link>
+            <Link to ='signup' className="navbar-brand  py-2 mr-5" style={{ marginLeft: '20px' }}> Signup </Link>
             {/* <a className="navbar-brand  py-2 mr-5" style={{ marginLeft: '20px' }}> Add Task</a> */}
 
           </div>
@@ -97,8 +97,12 @@ export default class Home extends Component {
       ></a>
     
 </section>
+
+
 </div>
 </footer>
+
+
 </div>
         )
     }
