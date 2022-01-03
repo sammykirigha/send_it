@@ -4,6 +4,7 @@ import App from './App'
 import Home from './Components/Home'
 import Login from './Components/Login'
 import Signup from './Components/Signup';
+import Userdashboard from './Components/Userdashboard';
 
 
 import { BrowserRouter,Routes,Route } from "react-router-dom";
@@ -18,6 +19,7 @@ ReactDOM.render(
 </Route>
 <Route path='signup' element={<Signup/>}/>
 <Route path='login' element= {<Login/> }/>
+<Route path='userdashboard' element= {<Userdashboard/> }/>
 </Routes>
 </BrowserRouter>
  ,
