@@ -10,6 +10,7 @@ import './index'
 
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 import AdminDashboard from './Components/AdminDashboard';
+import Contact from './Components/Contact'
 ReactDOM.render(
 
 <BrowserRouter>
@@ -20,6 +21,7 @@ ReactDOM.render(
   <Route path='signup' element={<Signup/>}/>
   <Route path='login' element= {<Login/> }/>
   <Route path='admin' element= {<AdminDashboard /> }/>
+  <Route path='contact' element= {<Contact /> }/>
 </Routes>
 </BrowserRouter>
  ,
