@@ -1,4 +1,5 @@
-drop table registration_queue
+
+
 create table [dbo].user_registration_queue
 (
     id int IDENTITY(1, 1) NOT NULL PRIMARY KEY,
@@ -6,4 +7,4 @@ create table [dbo].user_registration_queue
     isSent int DEFAULT(0)
 )
 
-SELECT * FROM dbo.user_registration_queue where isSent = 0 
+SELECT * FROM user_registration_queue where isSent = 0

@@ -3,7 +3,6 @@ const config = require('../../Config/config')
 const dotenv = require("dotenv")
 dotenv.config()
 
-
  function createTransport(congif){
      let transporter = nodemailer.createTransport(congif)
      return transporter

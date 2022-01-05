@@ -4,10 +4,13 @@ const morgan = require("morgan");
 const config = require("./Config/config");
 const cors = require("cors");
 const cron = require('node-cron')
+
+//task runners
 const regTaskRunner = require('./tasks/emails/Registration')
 const departureTaskRunner= require('./tasks/emails/Departure')
 const arrivalTaskRunner= require('./tasks/emails/Arrival')
 const arrivalSMSTaskRunner= require('./tasks/SMS/ParcelArrival')
+const departSMSTaskRunner = require('./tasks/SMS/ParcelDeparture').default
 
 
 const app = express();
@@ -23,24 +26,18 @@ app.use(express.urlencoded({ extended: true }));
 const run = async() => {
     cron.schedule('*/10 * * * * *', async () => {
        await regTaskRunner();
+       await departSMSTaskRunner()
     })
 
-    // cron.schedule('*/10 * * * * *', async () => {
-        
-    // })
+    cron.schedule('*/10 * * * * *', async() => {
+      // console.log("running")
+      // await departureTaskRunner();
+      // await arrivalTaskRunner();
+      // await arrivalSMSTaskRunner();
+   
+    });
 }
 
-const run1 = async()=>{
-  cron.schedule('*/10 * * * * *', async() => {
-    console.log("running")
-    // await departureTaskRunner();
-    // await arrivalTaskRunner();
-    await arrivalSMSTaskRunner();
- 
-  });
-}
-
-run1()
 run();
 
 

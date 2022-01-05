@@ -18,7 +18,7 @@ export default class Home extends Component {
             <Link to ='login' className="navbar-brand  py-2 mr-5" style={{ marginLeft: '450px' }}> Login </Link>
             <Link to ='signup' className="navbar-brand  py-2 mr-5" style={{ marginLeft: '20px' }}> Signup </Link>
             <Link to ='userdashboard' className="navbar-brand  py-2 mr-5" style={{ marginLeft: '20px' }}> UserD </Link>
-       
+            <Link to ='admin' className="navbar-brand  py-2 mr-5" style={{ marginLeft: '20px' }}> Admin </Link>
 
           </div>
         </div>
