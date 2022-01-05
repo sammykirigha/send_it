@@ -1,0 +1,96 @@
+.container {
+    background-image: url('https://cdn.pixabay.com/photo/2018/10/15/19/08/lake-3749758_960_720.png') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.child {  
+    margin-top: 15px;
+    background: aliceblue;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.image-container {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.image {
+    height: 50px;
+    width: 50px;
+}
+
+.logo {
+    margin-left: 10px;
+    text-transform: uppercase;
+    color: rgb(87, 82, 82);
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.menu-list {
+ margin-left: 150px;
+}
+
+.items {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-items: center;
+    align-items: center;
+    padding-top: 12px;
+    font-weight: 600;
+    color: rgb(60, 55, 55);
+    cursor: pointer;
+}
+
+.item {
+    margin-left: 45px;
+    text-transform: capitalize;
+    font-size: 18px;text-align: center;
+
+}
+
+.item2 {
+    margin-left: 45px;
+    text-transform: capitalize;
+    font-size: 18px;text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+}
+
+.logout {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    margin-left: auto;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+.logout-text {
+    text-transform: capitalize;
+}
+
+.dropdown {
+    margin-top: 9px;
+}
+
+.dropdown :focus {
+    outline: none;
+}

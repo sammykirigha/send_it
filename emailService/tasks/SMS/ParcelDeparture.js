@@ -1,9 +1,9 @@
-const config = require("../../Config/config")
-const db = require("../../db/db")
+import { apiKey as _apiKey, smsusername } from "../../Config/config";
+import { query } from "../../db/db";
 
-module.exports = async () => {
+export default async () => {
     try {
-        const items = await (await db.query("SELECT * FROM parcels where isSent = 0 ")).recordset
+        const items = await (await query("SELECT * FROM parcels where isSent = 0 ")).recordset
         console.log("items", items);
         const numbers = []
 
@@ -14,8 +14,8 @@ module.exports = async () => {
         let merged = [].concat.apply([], numbers)
 
         const credentials = {
-            apiKey: config.apiKey,
-            username: config.smsusername
+            apiKey: _apiKey,
+            username: smsusername
         }
 
         const Africastalking = require('africastalking')(credentials)
@@ -27,7 +27,7 @@ module.exports = async () => {
         } 
 
         await sms.send(options).then((response) => {
-            db.query("UPDATE parcels SET isSent = 1 WHERE id = '" +item.id +"'")
+            query("UPDATE parcels SET isSent = 1 WHERE id = '" +item.id +"'")
             console.log(response);
         }).catch(error => {
             console.log(error);

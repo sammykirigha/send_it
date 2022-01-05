@@ -5,8 +5,6 @@ const dotenv = require("dotenv")
 dotenv.config()
 const {sendMail} = require('../helpers/email')
 
-
-
 module.exports = async () => {
     const items = await (await db.query("SELECT * FROM user_registration_queue where isSent = 0")).recordset
     console.log("items");
