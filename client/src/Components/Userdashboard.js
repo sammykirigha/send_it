@@ -20,8 +20,8 @@ export default class Userdashboard extends Component {
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
            
-            <Link to ='login' className="navbar-brand  py-2 mr-5" style={{ marginLeft: '50px' }}> About Us </Link>
-            <Link to ='signup' className="navbar-brand  py-2 mr-5" style={{ marginLeft: '20px' }}> Contact Us </Link>
+            <Link to ={"/about"} className="navbar-brand  py-2 mr-5" style={{ marginLeft: '50px' }}> About Us </Link>
+            <Link to ={"/contact"} className="navbar-brand  py-2 mr-5" style={{ marginLeft: '20px' }}> Contact Us </Link>
             <Link to ='home' className="navbar-brand  py-2  ml-5 mr-5" 
             style={{ marginLeft: '650px', fontSize:'20px' ,fontFamily:'Monotype Corsiva'}}>
               <FaUserCircle/>   John Doe </Link>
