@@ -44,9 +44,9 @@ export default class Userdashboard extends Component {
             A customer will also be able to track the parcels and get instant notifications about the whereabouts of the parcel.
          </p>
 
-         <button type="button"  style={{  fontFamily:'ubuntu' ,padding: '10px',fontSize:'20px' ,backgroundColor:'blue'}} className="btn btn-outline-light btn-rounded">
+         <Link to={"/order"}  style={{  fontFamily:'ubuntu' ,padding: '10px',fontSize:'20px' ,backgroundColor:'blue'}} className="btn btn-outline-light btn-rounded">
         View Orders
-        </button>
+        </Link>
         
         </div>
 
