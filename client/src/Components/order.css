@@ -28,6 +28,20 @@ width: 60%;
 
 }
 
+.container-div1{
+    display: grid;
+    width: 60%;
+     margin: 10px;
+     margin-left: 250px;
+     background-color: #f4f6f8;
+     border: 1px solid green;
+     gap: 20px;
+     grid-template-columns: repeat(4, 1fr);
+     grid-template-rows:200px;
+     grid-template-areas: 
+     "one one  two two ";
+    }
+
 
 .order1{
 display: grid;
@@ -79,12 +93,13 @@ width: 60%;
  margin: 10px;
  margin:20px;
  margin-left: 250px;
- background-color: #f4f6f8;
+ background-color:lightgray;
  gap: 20px;
  grid-template-columns: repeat(4, 1fr);
  grid-template-rows:300px;
  grid-template-areas: 
  "five six six six";
+ padding: 20px;
 }
 
 .orderimg{
@@ -101,4 +116,11 @@ width: 60%;
     grid-area: six;
     border-radius:10px;
     padding: 10px;
+}
+
+.order13{
+    grid-area: four;
+    border-radius:10px;
+    padding: 10px;
+
 }

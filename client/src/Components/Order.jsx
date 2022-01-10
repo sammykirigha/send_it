@@ -9,6 +9,7 @@ export default class Order extends Component {
             <img src="https://cdn.pixabay.com/photo/2021/09/11/10/27/medal-6615190__340.png" alt="" className="orderimg" />
             </div>
             <div className="six">
+                <br/>
                 <h2>Order 1</h2>
                 <p> Order Details</p>
                 <p> order date: 17th January 2022</p>
