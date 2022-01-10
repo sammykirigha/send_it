@@ -4,7 +4,9 @@ import App from './App'
 import Home from './Components/Home'
 import Login from './Components/Login'
 import Signup from './Components/Signup';
+import About from './/Components/About'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Userdashboard from ".//Components/Userdashboard"
 import './index'
 
 
@@ -22,6 +24,8 @@ ReactDOM.render(
   <Route path='login' element= {<Login/> }/>
   <Route path='admin' element= {<AdminDashboard /> }/>
   <Route path='contact' element= {<Contact /> }/>
+  <Route path ='about' element={<About/>}/>
+  <Route path='userdashboard' element= {<Userdashboard /> }/>
 </Routes>
 </BrowserRouter>
  ,
